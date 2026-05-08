@@ -639,8 +639,7 @@
             color: var(--text-light);
             line-height: 1.5;
         }
-
-        /* ===== FINAL CTA ===== */
+/* ===== FINAL CTA ===== */
         .final-cta {
             background: var(--white);
             text-align: center;
@@ -658,4 +657,480 @@
             color: var(--text-secondary);
             max-width: 540px;
             margin: 0 auto 2.5rem;
-            l
+            line-height: 1.8;
+        }
+        .final-cta-actions {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            background: var(--navy);
+            color: rgba(255,255,255,0.5);
+            padding: 4rem 2rem 2rem;
+        }
+        .footer-inner {
+            max-width: 1120px;
+            margin: 0 auto;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+        .footer-brand-name {
+            font-weight: 700;
+            color: var(--white);
+            font-size: 0.95rem;
+            margin-bottom: 0.75rem;
+        }
+        .footer-brand-desc {
+            font-size: 0.85rem;
+            line-height: 1.6;
+            max-width: 280px;
+        }
+        .footer-col-title {
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.35);
+            margin-bottom: 1rem;
+        }
+        .footer-col a {
+            display: block;
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.5);
+            text-decoration: none;
+            margin-bottom: 0.6rem;
+            transition: color 0.2s;
+        }
+        .footer-col a:hover { color: var(--gold); }
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.08);
+            padding-top: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.78rem;
+        }
+        .footer-legal a {
+            color: rgba(255,255,255,0.35);
+            text-decoration: none;
+            margin-left: 1.5rem;
+            transition: color 0.2s;
+        }
+        .footer-legal a:hover { color: rgba(255,255,255,0.6); }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 1024px) {
+            .hero-headline { font-size: 2.8rem; }
+            .section-headline { font-size: 2rem; }
+            .stats-grid { grid-template-columns: 1fr; gap: 1.25rem; }
+            .pillars-grid { grid-template-columns: repeat(2, 1fr); }
+            .tiers-grid { grid-template-columns: 1fr; max-width: 440px; }
+            .tab-inner { grid-template-columns: 1fr; gap: 2rem; }
+            .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+        }
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .nav-hamburger { display: flex; }
+            .hero { min-height: auto; padding: 7rem 1.5rem 4rem; }
+            .hero-headline { font-size: 2.2rem; }
+            .hero-body { font-size: 1rem; }
+            .section { padding: 4rem 1.5rem; }
+            .section-headline { font-size: 1.75rem; }
+            .pillars-grid { grid-template-columns: 1fr; }
+            .stat-number { font-size: 2.4rem; }
+            .tab-btn { padding: 0.75rem 1.25rem; font-size: 0.82rem; }
+            .final-cta { padding: 5rem 1.5rem; }
+            .final-cta-headline { font-size: 2rem; }
+            .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+            .footer-bottom { flex-direction: column; gap: 1rem; text-align: center; }
+            .footer-legal a { margin-left: 0; margin-right: 1.5rem; }
+        }
+
+        /* ===== ANIMATIONS ===== */
+        .reveal {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===== NAVIGATION ===== -->
+    <nav class="nav" id="nav">
+        <div class="nav-inner">
+            <a href="/" class="nav-logo">
+                <div class="nav-logo-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                    </svg>
+                </div>
+                Sleep Professional Alliance
+            </a>
+            <ul class="nav-links">
+                <li><a href="/the-standard.html">The Standard</a></li>
+                <li><a href="/for-hotels.html">For Hotels</a></li>
+                <li><a href="/for-travellers.html">For Travellers</a></li>
+                <li><a href="/about.html">About</a></li>
+                <li><a href="/contact.html" class="nav-cta">Certify Your Property</a></li>
+            </ul>
+            <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="/the-standard.html">The Standard</a>
+            <a href="/for-hotels.html">For Hotels</a>
+            <a href="/for-travellers.html">For Travellers</a>
+            <a href="/about.html">About</a>
+            <a href="/contact.html">Contact</a>
+            <a href="/contact.html" class="nav-cta-mobile">Certify Your Property</a>
+        </div>
+    </nav>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero">
+        <div class="hero-inner">
+            <div class="hero-label">Evidence-Based Certification Programme</div>
+            <h1 class="hero-headline">The Global Standard for Measured Sleep Quality</h1>
+            <p class="hero-body">The Sleep Professional Alliance (SPA) is an evidence-based certification programme that translates peer-reviewed sleep science into measurable, verifiable standards for the built environment — developed in consultation with specialists in sleep science, circadian biology, acoustics, and hospitality operations.</p>
+            <div class="hero-actions">
+                <a href="/contact.html" class="btn-primary">
+                    Certify Your Property
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+                <a href="/the-standard.html" class="btn-secondary">
+                    Explore the Standard
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== THE PROBLEM ===== -->
+    <section class="section problem">
+        <div class="section-inner">
+            <div class="problem-text reveal">
+                <div class="section-label">The Problem</div>
+                <h2 class="section-headline">The Sleep Quality Gap</h2>
+                <p class="problem-body">Sleep deprivation costs the U.S. economy alone up to $411 billion annually. The sleep tourism market — valued at $74.5 billion in 2024 — is projected to nearly double by 2030. Yet a systemic gap persists between the sleep travellers demand and the environments hotels deliver.</p>
+                <br>
+                <p class="problem-body">Existing certifications like WELL, Fitwel, LEED, and BREEAM were not designed for hotel sleep environments. Proprietary brand programmes are marketing-driven, not measurement-driven. No scalable, science-based standard existed — until now.</p>
+            </div>
+            <div class="stats-grid reveal">
+                <div class="stat-card">
+                    <div class="stat-number">71%</div>
+                    <div class="stat-text">of hotel guests sleep the same or worse than at home — only 29% experience better-than-expected sleep.</div>
+                    <div class="stat-source">J.D. Power, 2019 NAGSI Study</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">80%</div>
+                    <div class="stat-text">of travellers report suffering from "sleep debt" during their journeys.</div>
+                    <div class="stat-source">Airport Dimensions, 2025</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">91%</div>
+                    <div class="stat-text">of frequent travellers will pay up to 10% more for accommodations with sleep-enhancing features.</div>
+                    <div class="stat-source">Global Wellness Institute, 2024</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ===== THE SOLUTION ===== -->
+    <section class="section solution">
+        <div class="section-inner reveal">
+            <div class="section-label">The Solution</div>
+            <h2 class="section-headline" style="color: var(--white);">A Rigorous Framework Built on Science</h2>
+            <p class="section-body">The SPA Standard translates peer-reviewed research across six scientific disciplines into a clear, actionable, and measurable set of protocols for the built environment. Every requirement is traceable to published evidence. Every certified property is assessed through structured, evidence-based protocols using calibrated instruments — not self-reported, not estimated, and not optional.</p>
+        </div>
+    </section>
+
+    <!-- ===== THE FRAMEWORK ===== -->
+    <section class="section framework">
+        <div class="section-inner">
+            <div class="reveal">
+                <div class="section-label">The Framework</div>
+                <h2 class="section-headline">Six Dimensions. One Complete Environment.</h2>
+                <p class="section-body">Sleep quality is not governed by a single variable. The SPA Standard measures performance across six scientifically defined dimensions — each with thresholds derived directly from peer-reviewed research.</p>
+            </div>
+            <div class="pillars-grid reveal">
+                <div class="pillar-card">
+                    <div class="pillar-icon">
+                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+                    </div>
+                    <div class="pillar-title">Luminous Environment</div>
+                    <div class="pillar-desc">Circadian-appropriate lighting design, blackout integrity, and elimination of intrusive light sources.</div>
+                </div>
+                <div class="pillar-card">
+                    <div class="pillar-icon">
+                        <svg viewBox="0 0 24 24"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+                    </div>
+                    <div class="pillar-title">Acoustic Environment</div>
+                    <div class="pillar-desc">Noise control informed by WHO Night Noise Guidelines, targeting levels below the biological stress response threshold.</div>
+                </div>
+                <div class="pillar-card">
+                    <div class="pillar-icon">
+                        <svg viewBox="0 0 24 24"><path d="M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z"/></svg>
+                    </div>
+                    <div class="pillar-title">Thermal Environment</div>
+                    <div class="pillar-desc">Supporting the ~1°C core temperature drop required for sleep onset through precise climate control and airflow design.</div>
+                </div>
+                <div class="pillar-card">
+                    <div class="pillar-icon">
+                        <svg viewBox="0 0 24 24"><path d="M8 2L8 5"/><path d="M16 2L16 5"/><path d="M12 2L12 5"/><path d="M3 10h18"/><path d="M20 21H4a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h16a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1z"/><path d="M8 14h.01"/><path d="M12 14h.01"/><path d="M16 14h.01"/><path d="M8 18h.01"/><path d="M12 18h.01"/></svg>
+                    </div>
+                    <div class="pillar-title">Air Quality</div>
+                    <div class="pillar-desc">Ventilation rates, CO₂ levels, filtration standards, and elimination of sleep-disruptive chemical or particulate irritants.</div>
+                </div>
+                <div class="pillar-card">
+                    <div class="pillar-icon">
+                        <svg viewBox="0 0 24 24"><path d="M2 4v16"/><path d="M22 4v16"/><path d="M2 12h20"/><path d="M2 8h20"/><path d="M2 16h20"/></svg>
+                    </div>
+                    <div class="pillar-title">Postural Support</div>
+                    <div class="pillar-desc">Medium-firm mattress performance, pillow configuration, pressure distribution, and maintenance protocols.</div>
+                </div>
+                <div class="pillar-card">
+                    <div class="pillar-icon">
+                        <svg viewBox="0 0 24 24"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><line x1="12" y1="20" x2="12.01" y2="20"/></svg>
+                    </div>
+                    <div class="pillar-title">Electromagnetic Environment</div>
+                    <div class="pillar-desc">Precautionary minimisation of unnecessary EMF exposure in the sleep zone as part of a comprehensive wellness approach.</div>
+                </div>
+            </div>
+            <div class="framework-cta reveal">
+                <a href="/the-standard.html" class="btn-outline">
+                    Explore the Full Standard
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CERTIFICATION TIERS ===== -->
+    <section class="section tiers">
+        <div class="section-inner">
+            <div class="reveal" style="text-align:center; max-width:640px; margin:0 auto;">
+                <div class="section-label">Certification</div>
+                <h2 class="section-headline">Three Tiers. One Clear Path.</h2>
+                <p class="section-body" style="margin:0 auto;">SPA certification is designed to meet properties where they are. From foundational sleep protection to optimised recovery environments, the framework defines three tiers — each with progressively more stringent, independently verified thresholds.</p>
+            </div>
+            <div class="tiers-grid reveal" style="max-width:960px; margin:3rem auto 0;">
+                <div class="tier-card tier-1">
+                    <div class="tier-badge">
+                        <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    </div>
+                    <div class="tier-name">Sleep Friendly<span class="tier-tm">™</span></div>
+                    <div class="tier-tagline">Eliminating Harm</div>
+                    <div class="tier-desc">A science-informed baseline that removes the most common environmental disruptors of sleep. The foundation for any property serious about guest rest.</div>
+                </div>
+                <div class="tier-card tier-2">
+                    <div class="tier-badge">
+                        <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M12 8v4l2 2"/></svg>
+                    </div>
+                    <div class="tier-name">Gold Recovery<span class="tier-tm">™</span></div>
+                    <div class="tier-tagline">Supporting Recovery</div>
+                    <div class="tier-desc">Environmental parameters calibrated to more stringent thresholds — actively optimised to support the body's natural restorative processes.</div>
+                </div>
+                <div class="tier-card tier-3">
+                    <div class="tier-badge">
+                        <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+                    </div>
+                    <div class="tier-name">Platinum Regen<span class="tier-tm">™</span></div>
+                    <div class="tier-tagline">Peak Regeneration</div>
+                    <div class="tier-desc">Gold Recovery standards plus dedicated Sleep Suites equipped with evidence-based sleep enhancement technologies. The highest achievable standard.</div>
+                </div>
+            </div>
+            <div class="tiers-cta reveal">
+                <a href="/the-standard.html#tiers" class="btn-outline">
+                    See Certification Tiers
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== ASSURANCE ===== -->
+    <section class="section assurance">
+        <div class="section-inner reveal">
+            <div class="section-label">Assurance</div>
+            <h2 class="section-headline" style="color: var(--white);">Evidence-Based. Protocol-Driven. Verified.</h2>
+            <p class="section-body">Every SPA-certified property is assessed through structured, on-site protocols using calibrated instruments — not surveys, not estimates, and not self-reports. Every data point is captured digitally and submitted to SPA's secure platform, where it is reviewed and verified by SPA's certification team before any tier designation is issued.</p>
+            <p class="assurance-tagline">The methodology is transparent. The standard is public. The results are verified.</p>
+        </div>
+    </section>
+
+    <!-- ===== WHO IT'S FOR ===== -->
+    <section class="section audience">
+        <div class="section-inner">
+            <div class="reveal">
+                <div class="section-label">Who It's For</div>
+                <h2 class="section-headline">Built for Two Audiences</h2>
+            </div>
+            <div class="reveal">
+                <div class="tabs">
+                    <button class="tab-btn active" data-tab="hotels">Hotel Operators &amp; Developers</button>
+                    <button class="tab-btn" data-tab="travellers">Travellers &amp; the Public</button>
+                </div>
+
+                <div class="tab-content active" id="tab-hotels">
+                    <div class="tab-inner">
+                        <div>
+                            <div class="tab-headline">A Competitive Advantage You Can Prove</div>
+                            <p class="tab-body">Wellness-positioned hotels generate 56–108% more revenue per room than comparable non-wellness properties. A 1% increase in online reputation score leads to a 1.42% increase in RevPAR. SPA certification gives your property a measurable, verified differentiator in the fastest-growing segment of hospitality.</p>
+                            <p class="tab-body">For the General Manager, it's a competitive weapon. For the VP of Operations, a framework for standardising an amenity that has historically been unmeasurable. For the ownership group, a high-return investment with a rapid payback.</p>
+                            <a href="/for-hotels.html" class="btn-dark">
+                                Start the Certification Process
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                            </a>
+                        </div>
+                        <div class="tab-visual">
+                            <div class="tab-visual-content">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="1" stroke-linecap="round">
+                                    <rect x="2" y="7" width="20" height="14" rx="2"/>
+                                    <path d="M16 7V5a4 4 0 0 0-8 0v2"/>
+                                    <path d="M12 14v2"/>
+                                    <circle cx="12" cy="14" r="1"/>
+                                </svg>
+                                <div class="tab-visual-text">Independent verification<br>Protocol-driven assessment<br>Science-based differentiation</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-content" id="tab-travellers">
+                    <div class="tab-inner">
+                        <div>
+                            <div class="tab-headline">Know Before You Book</div>
+                            <p class="tab-body">You research restaurants, airlines, and mattresses before committing. Why should your hotel's sleep environment be a gamble? SPA certification means the room you're booking has been independently assessed and verified against science-based standards — so you can choose accommodation that protects and enhances your sleep.</p>
+                            <p class="tab-body">Look for the SPA certification mark when booking. Browse certified properties in the SPA directory. And for the first time, compare hotels on the metric that matters most to how you'll feel tomorrow.</p>
+                            <a href="/for-travellers.html" class="btn-dark">
+                                Browse Certified Properties
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                            </a>
+                        </div>
+                        <div class="tab-visual">
+                            <div class="tab-visual-content">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="1" stroke-linecap="round">
+                                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                                    <path d="M17 12a5 5 0 1 1-5-5"/>
+                                </svg>
+                                <div class="tab-visual-text">Verified sleep environments<br>Science-based standards<br>Choose with confidence</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ===== FINAL CTA ===== -->
+    <section class="final-cta">
+        <div class="section-inner reveal">
+            <div class="final-cta-headline">Ready to Lead on Sleep?</div>
+            <p class="final-cta-body">Join the first generation of properties certified to a science-based, independently verified sleep quality standard. The process starts with a single conversation.</p>
+            <div class="final-cta-actions">
+                <a href="/contact.html" class="btn-primary">
+                    Certify Your Property
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+                <a href="#" class="btn-outline">
+                    Download the Standard
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-brand-name">Sleep Professional Alliance</div>
+                    <div class="footer-brand-desc">The global standard for measured sleep quality in the built environment.</div>
+                </div>
+                <div class="footer-col">
+                    <div class="footer-col-title">Standard</div>
+                    <a href="/the-standard.html">The Framework</a>
+                    <a href="/the-standard.html#tiers">Certification Tiers</a>
+                    <a href="/for-hotels.html#process">Assessment Process</a>
+                    <a href="#">Download the Standard</a>
+                </div>
+                <div class="footer-col">
+                    <div class="footer-col-title">Resources</div>
+                    <a href="#">White Paper</a>
+                    <a href="#">Research Bibliography</a>
+                    <a href="/about.html#insights">Insights &amp; Articles</a>
+                    <a href="#">Press</a>
+                </div>
+                <div class="footer-col">
+                    <div class="footer-col-title">Organisation</div>
+                    <a href="/about.html">About SPA</a>
+                    <a href="/about.html#council">Advisory Board</a>
+                    <a href="/contact.html">Contact</a>
+                    <a href="/for-travellers.html#directory">Certified Properties</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>&copy; 2025 Sleep Professional Alliance. All rights reserved.</span>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // ===== NAV SCROLL EFFECT =====
+        const nav = document.getElementById('nav');
+        window.addEventListener('scroll', () => {
+            nav.classList.toggle('scrolled', window.scrollY > 20);
+        });
+
+        // ===== MOBILE MENU =====
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobileMenu');
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+        });
+
+        // ===== TABS =====
+        document.querySelectorAll('.tab-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+                document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+                btn.classList.add('active');
+                document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
+            });
+        });
+
+        // ===== SCROLL REVEAL =====
+        const revealElements = document.querySelectorAll('.reveal');
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+        revealElements.forEach(el => revealObserver.observe(el));
+    </script>
+</body>
+</html>
